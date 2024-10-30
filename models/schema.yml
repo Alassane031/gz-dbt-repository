@@ -49,3 +49,129 @@ sources:
             description: the cost of preparing the parcel in the distribution centre/warehouse
           - name: ship_cost
             description: shipping cost paid by Greenweez to the carrier/logistics provider
+      - name: adwords
+        identifier: raw_gz_adwords
+        description: adwords model
+        columns:
+          - name: date_date
+            description: date
+          - name: paid_source
+            description: sources of money
+          - name: campaign_key
+            description: key of the campaign 
+          - name: camPGN_name
+            description:  the campaign name 
+          - name: ads_cost
+            description: the cost of ads campaign 
+          - name: impression
+            description: number of impressions 
+          - name: click
+            description: number of clicks
+        tests:
+          - unique:
+              column_name: "(date_date || '-' || campaign_key)" 
+          - not_null:
+              column_name: "(date_date || '-' || campaign_key)" 
+
+      - name: bing 
+        identifier: raw_gz_bing
+        description: bing adding
+        columns:
+          - name: date_date
+            description: date
+          - name: paid_source
+            description: sources of money
+          - name: campaign_key
+            description: key of the campaign 
+          - name: camPGN_name
+            description:  the campaign name 
+          - name: ads_cost
+            description: the cost of ads campaign 
+          - name: impression
+            description: number of impressions 
+          - name: click
+            description: number of clicks
+        tests:
+          - unique:
+              column_name: "(date_date || '-' || campaign_key)" 
+          - not_null:
+              column_name: "(date_date || '-' || campaign_key)" 
+
+      - name: facebook
+        identifier: raw_gz_facebook
+        description: facebook adding 
+        columns:
+          - name: date_date
+            description: date
+          - name: paid_source
+            description: sources of money
+          - name: campaign_key
+            description: key of the campaign 
+          - name: camPGN_name
+            description:  the campaign name 
+          - name: ads_cost
+            description: the cost of ads campaign 
+          - name: impression
+            description: number of impressions 
+          - name: click
+            description: number of clicks
+        tests:
+          - unique:
+              column_name: "(date_date || '-' || campaign_key)" 
+          - not_null:
+              column_name: "(date_date || '-' || campaign_key)" 
+
+      - name: criteo
+        identifier: raw_gz_criteo
+        description: criteo adding 
+        columns:
+          - name: date_date
+            description: date
+          - name: paid_source
+            description: sources of money
+          - name: campaign_key
+            description: key of the campaign 
+          - name: camPGN_name
+            description:  the campaign name 
+          - name: ads_cost
+            description: the cost of ads campaign 
+          - name: impression
+            description: number of impressions 
+          - name: click
+            description: number of clicks
+        tests:
+          - unique:
+              column_name: "(date_date || '-' || campaign_key)" 
+          - not_null:
+              column_name: "(date_date || '-' || campaign_key)" 
+      - name: finance_campaigns_day 
+        description: "Table combinant les données financières journalières et les coûts des campagnes."
+        columns:
+          - name: date_date
+            description: "La date de chaque enregistrement."
+          - name: ads_margin
+            description: "Marge opérationnelle ajustée des coûts publicitaires."
+          - name: average_basket
+            description: "Valeur moyenne du panier d'achats."
+          - name: operational_margin
+            description: "Marge opérationnelle des finances."
+          - name: ads_cost
+            description: "Coût des publicités pour la journée."
+          - name: ads_impression
+            description: "Nombre d'impressions publicitaires."
+          - name: ads_click
+            description: "Nombre de clics sur les publicités."
+          - name: quantity
+            description: "Quantité de produits vendus."
+          - name: revenue
+            description: "Revenu généré pour la journée."
+          - name: purchase_cost
+            description: "Coût d'achat des produits vendus."
+          - name: margin
+            description: "Marge bénéficiaire après coûts d'achats."
+          - name: shipping_fee
+            description: "Frais de livraison facturés."
+          - name: logcost
+            description: "Coûts logistiques associés à la livraison."
+          - name: ship_cost
+            description: "Coût total d'expédition."
